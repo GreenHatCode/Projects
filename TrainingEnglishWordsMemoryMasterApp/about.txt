@@ -1,0 +1,6 @@
+AboutApplicationSTART
+This is a simple app that can help you memorize word translations. And it can be useful for those who want to facilitate the process of learning languages. It (application) was developed using C++ along with MFC and works without internet connection or any other applications. To create your own word files, use MasterApp, it has a very simple structure, so try to figure it out yourself.
+AboutApplicationEND
+AboutAuthorsSTART
+Hello, dear user, I'm a junior developer from Ukraine, I'm learning programming. In my free time and on holidays I try to create my own applications for practical purposes (to help you study, to make arithmetic tasks easier, etc.).
+AboutAuthorsEND
