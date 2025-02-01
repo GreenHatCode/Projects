@@ -13,14 +13,14 @@ QuickPrint::QuickPrint(const QuickPrint& obj)
 	m_page_setup = obj.m_page_setup;
 
 	m_units_per_cm = obj.m_units_per_cm;
-	m_print_function = obj.m_print_function;
+	m_print_fun = obj.m_print_fun;
 }
 
 QuickPrint::QuickPrint(
-	int page_amount, 
-	wxString title, 
-	float units_per_cm, 
-	void(*print_fun)(wxDC& dc, int pageNum, wxSize pageSize)
+	int page_amount,
+	wxString title,
+	float units_per_cm,
+	std::function<void(wxDC& dc, int pageNum, wxSize dc_size)> print_fun
 )
 	:wxPrintout(title)
 {
@@ -33,7 +33,7 @@ QuickPrint::QuickPrint(
 	m_margin_bottom = 32;
 
 	m_units_per_cm = units_per_cm;
-	m_print_function = print_fun;
+	m_print_fun = print_fun;
 }
 
 bool QuickPrint::performPageSetup(const bool showPageSetupDialog)
@@ -147,8 +147,8 @@ bool QuickPrint::OnPrintPage(int pageNum)
 	}
 	wxDC& dc = *ptr; // printger dc
 
-	// drawing into printerDC all we need to print 
-	m_print_function(dc, pageNum, wxSize(m_coord_system_width, m_coord_system_height));
+	
+	m_print_fun(dc, pageNum, wxSize(m_coord_system_width, m_coord_system_height));// drawing into printerDC all we need to print 
 
 	return true;
 }
