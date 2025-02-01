@@ -43,7 +43,7 @@ Run debugging of the project. Once the project is compiled, you can test printin
 ### Your project
 
  1. Add the ``QuickPrint.h`` and ``QuickPrint.cpp`` files to your solution.
- 2. Add the ``void Print(wxDC& dc, int pageNum, wxSize pg_size)`` function to the class whose data you are going to print. It is recommended to look at the **example** and **wxWidgets documentation on drawing and printing**.
+ 2. Add the ``void Print(wxDC& dc, int pageNum, wxSize pg_size)`` function to the class whose data you are going to print. It is recommended to look at the [example](https://github.com/GreenHatCode/Projects/blob/wxWidgetsPrintingFramework/wxWidgetsPrintingFramework/example%20project/PrintExample.h) and [wxWidgets documentation on drawing and printing](https://docs.wxwidgets.org/3.2/overview_printing.html).
  3. Add a function to the window class to handle print events.
  4. Add code to this function as in the example project.
 
